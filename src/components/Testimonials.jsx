@@ -1,9 +1,9 @@
-// app/components/Testimonials.tsx
 "use client";
 
 import Image from "next/image";
 import Link from "next/link";
 import { Check } from "lucide-react";
+import { Images } from "@/assets";
 
 const testimonials = [
   {
@@ -13,7 +13,7 @@ const testimonials = [
     author: {
       name: "Sienna Hewitt",
       username: "@siennahewitt",
-      avatar: "/testimonials/sienna.jpg",
+      avatar: Images.Avatar,
       verified: true,
     },
   },
@@ -24,7 +24,7 @@ const testimonials = [
     author: {
       name: "Kari Rasmussen",
       username: "@itskari",
-      avatar: "/testimonials/kari.jpg",
+      avatar: Images.Avatar1,
       verified: true,
     },
   },
@@ -35,7 +35,7 @@ const testimonials = [
     author: {
       name: "Amélie Laurent",
       username: "@alaurent_",
-      avatar: "/testimonials/amelie.jpg",
+      avatar: Images.Avatar2,
       verified: true,
     },
   },
@@ -46,7 +46,7 @@ const testimonials = [
     author: {
       name: "Aliah Lane",
       username: "@aliah_ux",
-      avatar: "/testimonials/aliah.jpg",
+      avatar: Images.Avatar3,
       verified: true,
     },
   },
@@ -57,7 +57,7 @@ const testimonials = [
     author: {
       name: "Eduard Franz",
       username: "@eduardfranz",
-      avatar: "/testimonials/eduard.jpg",
+      avatar: Images.Avatar4,
       verified: true,
     },
   },
@@ -68,7 +68,7 @@ const testimonials = [
     author: {
       name: "Lily-Rose Chedjou",
       username: "@lilyrose",
-      avatar: "/testimonials/lily.jpg",
+      avatar: Images.Avatar5,
       verified: true,
     },
   },
@@ -80,38 +80,32 @@ const Testimonials = () => {
       <div className="mx-auto max-w-7xl px-4">
         {/* Badge */}
         <div className="flex justify-center mb-6">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-purple-200 rounded-full">
-            <Check className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-primary">
+          <div className="inline-flex items-center gap-1 px-2 py-1 bg-[#F4F3FF] border border-purple-200 rounded-full">
+            <Check className="w-4 h-4 text-[#5925DC]" />
+            <span className="text-lg font-medium text-[#5925DC]">
               No Hidden Fees
             </span>
           </div>
         </div>
 
         {/* Heading */}
-        <h2 className="text-center text-4xl md:text-5xl lg:text-6xl font-bold mb-16">
+        <h2 className="text-center text-3xl md:text-4xl lg:text-5xl font-bold mb-16">
           <span className="text-gray-400">WHAT OUR </span>
           <span className="text-primary">CUSTOMERS</span>
           <span className="text-gray-400"> SAY</span>
         </h2>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white rounded-2xl p-6 shadow-xs transition-shadow"
             >
               {/* Stars */}
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <svg
-                    key={i}
-                    className="w-5 h-5 text-yellow-400 fill-current"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                  </svg>
+                 <Image key={i} src={Images.Star} width={15} height={15} alt="star"/>
                 ))}
               </div>
 
@@ -135,20 +129,10 @@ const Testimonials = () => {
                       {testimonial.author.name}
                     </p>
                     {testimonial.author.verified && (
-                      <svg
-                        className="w-4 h-4 text-primary"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
+                      <Image src={Images.VerifiedTick} width={15} height={15} alt="verified"/>
                     )}
                   </div>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-gray-500 underline">
                     {testimonial.author.username}
                   </p>
                 </div>

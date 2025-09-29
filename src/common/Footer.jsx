@@ -15,8 +15,8 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-gray-50 border-t border-gray-200">
-      <div className="mx-auto max-w-7xl px-4 py-12">
+    <footer className="w-full bg-gray-50 border-gray-200">
+      <div className="mx-auto max-w-7xl px-4 py-10">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
           {/* Logo and App Downloads */}
@@ -38,7 +38,7 @@ const Footer = () => {
                 className="inline-block"
               >
                 <Image
-                  src="/app-store.png"
+                  src={Images.appStore}
                   alt="Download on App Store"
                   width={135}
                   height={40}
@@ -52,7 +52,7 @@ const Footer = () => {
                 className="inline-block"
               >
                 <Image
-                  src="/google-play.png"
+                  src={Images.playStore}
                   alt="Get it on Google Play"
                   width={135}
                   height={40}
@@ -66,7 +66,7 @@ const Footer = () => {
                 className="inline-block"
               >
                 <Image
-                  src="/app-gallery.png"
+                  src={Images.galleryStore}
                   alt="Explore it on AppGallery"
                   width={135}
                   height={40}
@@ -84,7 +84,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-700 hover:text-primary transition"
+                    className="text-base text-gray-700 font-semibold hover:text-primary transition"
                   >
                     {link.name}
                   </Link>
@@ -103,7 +103,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-700 hover:text-primary transition"
+                    className="text-base text-gray-700 font-semibold hover:text-primary transition"
                   >
                     {link.name}
                   </Link>
@@ -114,13 +114,13 @@ const Footer = () => {
 
           {/* Business */}
           <div>
-            <h3 className="text-sm font-medium text-gray-400 mb-4">Business</h3>
+            <h3 className="text-base font-medium text-gray-400 mb-4">Business</h3>
             <ul className="space-y-3">
               {businessLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-700 hover:text-primary transition"
+                    className="text-base text-gray-700 font-semibold hover:text-primary transition"
                   >
                     {link.name}
                   </Link>
@@ -137,7 +137,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-700 hover:text-primary transition"
+                    className="text-base text-gray-700 font-semibold hover:text-primary transition"
                   >
                     {link.name}
                   </Link>
@@ -156,7 +156,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-700 hover:text-primary transition"
+                    className="text-base text-gray-700 font-semibold hover:text-primary transition"
                   >
                     {link.name}
                   </Link>
@@ -167,12 +167,12 @@ const Footer = () => {
         </div>
 
         {/* Legal Links */}
-        <div className="flex flex-wrap items-center gap-6 py-6 border-t border-gray-200">
+        <div className="flex flex-wrap items-center gap-6 py-6  border-gray-200">
           {legalLinks.map((link, index) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm text-gray-700 hover:text-primary transition underline"
+              className="text-sm font-normal text-gray-700 hover:text-primary transition underline"
             >
               {link.name}
             </Link>

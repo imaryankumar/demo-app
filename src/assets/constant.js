@@ -1,5 +1,5 @@
 import { Star, Wrench, Heart, Box, Car, Scissors } from "lucide-react";
-import { Images } from ".";
+import { Images } from "./index.js";
 
 export const services = [
   { name: "General Cleaning", icon: Star, href: "/services/general-cleaning" },
@@ -98,26 +98,26 @@ export const legalLinks = [
 ];
 
 export const socialLinks = [
-  { name: "Twitter", href: "https://twitter.com", icon: "/social/twitter.svg" },
+  { name: "Twitter", href: "https://twitter.com", icon: Images.x },
   {
     name: "LinkedIn",
     href: "https://linkedin.com",
-    icon: "/social/linkedin.svg",
+    icon: Images.linkdin,
   },
   {
     name: "Facebook",
     href: "https://facebook.com",
-    icon: "/social/facebook.svg",
+    icon: Images.facebook,
   },
   {
     name: "Instagram",
     href: "https://instagram.com",
-    icon: "/social/instagram.svg",
+    icon: Images.instagram,
   },
   {
     name: "WhatsApp",
     href: "https://whatsapp.com",
-    icon: "/social/whatsapp.svg",
+    icon: Images.whatsapp,
   },
-  { name: "TikTok", href: "https://tiktok.com", icon: "/social/tiktok.svg" },
+  { name: "TikTok", href: "https://tiktok.com", icon: Images.tiktok },
 ];

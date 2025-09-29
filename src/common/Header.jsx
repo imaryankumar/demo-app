@@ -140,7 +140,7 @@ const Header = () => {
             <DropdownMenuTrigger asChild>
               <Button
                 variant="outline"
-                className="flex items-center gap-2 text-sm border-gray-300"
+                className="flex items-center gap-2 !hover:bg-none !outline-none text-sm cursor-pointer"
               >
                 <Globe className="h-4 w-4" />
                 English
@@ -154,7 +154,7 @@ const Header = () => {
                 />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-64 p-4">
+            <DropdownMenuContent align="end" className="w-64 p-4 bg-white">
               <div className="space-y-4">
                 <div>
                   <p className="text-sm text-gray-500 mb-3">Country</p>
@@ -162,7 +162,7 @@ const Header = () => {
                     <label className="flex items-center justify-between p-2 rounded-lg hover:bg-gray-50 cursor-pointer">
                       <div className="flex items-center gap-3">
                         <Image
-                          src="/qatar-flag.png"
+                          src={Images.languageQA}
                           alt="Qatar"
                           width={24}
                           height={24}
@@ -179,7 +179,7 @@ const Header = () => {
                     <label className="flex items-center justify-between p-2 rounded-lg hover:bg-gray-50 cursor-pointer">
                       <div className="flex items-center gap-3">
                         <Image
-                          src="/uae-flag.png"
+                          src={Images.languageCountry}
                           alt="UAE"
                           width={24}
                           height={24}
