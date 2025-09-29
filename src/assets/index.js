@@ -27,7 +27,7 @@ import blog_img3 from "../../public/images/testimonials/blog_img3.png"
 import faq_plus from "../../public/images/testimonials/faq_plus.svg"
 import faq_minus from "../../public/images/testimonials/faq_minus.svg"
 import language_QA from "../../public/images/QA.svg"
-
+import banner_img from "../../public/images/banner_image.png"
 
 
 
@@ -36,6 +36,22 @@ import poster_badges from "../../public/images/pocket/poster_badges.svg"
 import poster_coin from "../../public/images/pocket/poster_coin.svg"
 import poster_gallery from "../../public/images/pocket/poster_gallery.svg"
 import poster_mobile from "../../public/images/pocket/poster_mobile.svg"
+
+import frame1 from "../../public/images/services/frame1.png"
+import frame2 from "../../public/images/services/frame2.png"
+import frame3 from "../../public/images/services/frame3.png"
+import frame4 from "../../public/images/services/frame4.png"
+import frame5 from "../../public/images/services/frame5.png"
+import frame6 from "../../public/images/services/frame6.png"
+import frame7 from "../../public/images/services/frame7.png"
+import frame8 from "../../public/images/services/frame8.png"
+import frame9 from "../../public/images/services/frame9.png"
+import frame10 from "../../public/images/services/frame10.png"
+import frame11 from "../../public/images/services/frame11.png"
+import frame12 from "../../public/images/services/frame12.png"
+import frame13 from "../../public/images/services/frame13.png"
+import frame14 from "../../public/images/services/frame14.png"
+
 
 
 export const Images = {
@@ -72,5 +88,21 @@ export const Images = {
   galleryIcon: poster_badges,
   coinImg: poster_coin,
   mobileImg: poster_mobile,
-  languageQA:language_QA,
+  languageQA: language_QA,
+  bannerImage: banner_img,
+  frame1,
+  frame2,
+  frame3,
+  frame4,
+  frame5,
+  frame6,
+  frame7,
+  frame8,
+  frame1,
+  frame9,
+  frame10,
+  frame11,
+  frame12,
+  frame13,
+  frame14
 };
