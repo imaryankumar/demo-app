@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", sans-serif;
+  --radius: 0.5rem;
+
+  --color-background: #ffffff;
+  --color-foreground: #0a0a0a;
+
+  --color-primary: #690fff; /* Blue */
+  --color-secondary: #98a2b3; /* Amber */
+  --color-accent: #475467; /* Emerald */
+  --color-muted: #414651;
+  --color-border: #e5e7eb;
+}
+
+/* ✅ Base resets */
+* {
+  @apply border-border;
+}
+
+body {
+  @apply bg-background text-foreground font-sans antialiased;
+}
