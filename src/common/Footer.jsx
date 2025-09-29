@@ -1,77 +1,17 @@
-// app/components/Footer.tsx
 "use client";
 
 import Image from "next/image";
 import Link from "next/link";
-import { Images } from "@/assets/images";
-
-const companyLinks = [
-  { name: "Home", href: "/" },
-  { name: "About Us", href: "/about" },
-  { name: "Contact Us", href: "/contact" },
-  { name: "Blog", href: "/blog" },
-];
-
-const locationLinks = [
-  { name: "Qatar", href: "/locations/qatar" },
-  { name: "United Arab Emirates", href: "/locations/uae" },
-];
-
-const businessLinks = [
-  { name: "Become A Pro", href: "/become-pro" },
-  { name: "Become A Partner", href: "/become-partner" },
-];
-
-const servicesColumn1 = [
-  { name: "General Cleaning", href: "/services/general-cleaning" },
-  { name: "Movers & Packers", href: "/services/movers-packers" },
-  { name: "Mobility & Wellness", href: "/services/mobility-wellness" },
-  { name: "Birds & Pigeon", href: "/services/birds-pigeon" },
-  { name: "Dry & Laundry", href: "/services/dry-laundry" },
-  { name: "Gardening", href: "/services/gardening" },
-  { name: "Maids", href: "/services/maids" },
-];
-
-const servicesColumn2 = [
-  { name: "Pest & Germ Control", href: "/services/pest-control" },
-  { name: "Auto Care", href: "/services/auto-care" },
-  { name: "Home Maintenance", href: "/services/home-maintenance" },
-  { name: "Pet Grooming", href: "/services/pet-grooming" },
-  { name: "Health Care at Home", href: "/services/health-care" },
-  { name: "Babysitting", href: "/services/babysitting" },
-  { name: "Hospitality", href: "/services/hospitality" },
-];
-
-const legalLinks = [
-  { name: "Terms Of Use", href: "/terms" },
-  { name: "Privacy Policy", href: "/privacy" },
-  { name: "Cancellation Policy", href: "/cancellation" },
-];
-
-const socialLinks = [
-  { name: "Twitter", href: "https://twitter.com", icon: "/social/twitter.svg" },
-  {
-    name: "LinkedIn",
-    href: "https://linkedin.com",
-    icon: "/social/linkedin.svg",
-  },
-  {
-    name: "Facebook",
-    href: "https://facebook.com",
-    icon: "/social/facebook.svg",
-  },
-  {
-    name: "Instagram",
-    href: "https://instagram.com",
-    icon: "/social/instagram.svg",
-  },
-  {
-    name: "WhatsApp",
-    href: "https://whatsapp.com",
-    icon: "/social/whatsapp.svg",
-  },
-  { name: "TikTok", href: "https://tiktok.com", icon: "/social/tiktok.svg" },
-];
+import { Images } from "@/assets";
+import {
+  companyLinks,
+  locationLinks,
+  businessLinks,
+  servicesColumn1,
+  servicesColumn2,
+  legalLinks,
+  socialLinks,
+} from "@/assets/constant";
 
 const Footer = () => {
   return (

@@ -1,4 +1,3 @@
-// app/components/Header.tsx
 "use client";
 
 import Image from "next/image";
@@ -12,7 +11,7 @@ import {
   DropdownMenuContent,
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Images } from "@/assets/images";
+import { Images } from "@/assets";
 import { blogs, services, navItems } from "@/assets/constant";
 
 const Header = () => {
@@ -50,7 +49,7 @@ const Header = () => {
                         servicesOpen ? "rotate-180" : "rotate-0"
                       }`}
                     >
-                      <ChevronDown />
+                      <ChevronDown size={18} />
                     </span>
                   </button>
 
@@ -145,7 +144,7 @@ const Header = () => {
               >
                 <Globe className="h-4 w-4" />
                 English
-                <span className="text-accent">|</span>
+                <span className="inline-block h-4 border-r border-gray-400"></span>
                 <Image
                   src={Images.countryIcon}
                   alt="UAE Flag"
@@ -222,6 +221,7 @@ const Header = () => {
               </div>
             </DropdownMenuContent>
           </DropdownMenu>
+           <span className="inline-block h-8 border-r border-gray-400"></span>
           <Button variant="outline" className="border-gray-300">
             Log in
           </Button>
@@ -250,11 +250,11 @@ const Header = () => {
                     >
                       {item.name}
                       <span>
-                        {mobileServicesOpen ? <ChevronUp /> : <ChevronDown />}
+                        {mobileServicesOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
                       </span>
                     </button>
                     {mobileServicesOpen && (
-                      <div className="mt-3 flex flex-col gap-2 pl-3">
+                      <div className="mt-3 flex flex-col gap-2 pl-3 max-h-96 overflow-y-auto">
                         {services.map((service) => (
                           <Link
                             key={service.name}
@@ -282,7 +282,7 @@ const Header = () => {
             </nav>
             <div className="mt-6 flex flex-col gap-3">
               <Button variant="outline">Log in</Button>
-              <Button className="bg-primary hover:bg-primary/90">
+              <Button className="bg-primary text-white hover:bg-primary/90">
                 Sign up
               </Button>
             </div>
