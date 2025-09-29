@@ -179,7 +179,7 @@ const Header = () => {
                     <label className="flex items-center justify-between p-2 rounded-lg hover:bg-gray-50 cursor-pointer">
                       <div className="flex items-center gap-3">
                         <Image
-                          src={Images.languageCountry}
+                          src={Images.countryIcon}
                           alt="UAE"
                           width={24}
                           height={24}

@@ -27,7 +27,7 @@ import blog_img3 from "../../public/images/testimonials/blog_img3.png"
 import faq_plus from "../../public/images/testimonials/faq_plus.svg"
 import faq_minus from "../../public/images/testimonials/faq_minus.svg"
 import language_QA from "../../public/images/QA.svg"
-import language_country from "../../public/images/Country_icons.svg"
+
 
 
 
@@ -73,5 +73,4 @@ export const Images = {
   coinImg: poster_coin,
   mobileImg: poster_mobile,
   languageQA:language_QA,
-  languageCountry:language_country
 };
