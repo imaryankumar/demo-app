@@ -1,78 +1,111 @@
-// app/components/HowItWorks.tsx
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
-import { Signal, Wifi, Battery } from "lucide-react";
-
-const steps = [
-  {
-    id: 1,
-    title: "Choose Your Service",
-    description:
-      "Open the app or website and select the service you need—from cleaning to grooming.",
-    image: "/step-1.png",
-  },
-  {
-    id: 2,
-    title: "Pick Date, Time & Location",
-    description: "Tell us when and where, and we'll take care of the rest.",
-    image: "/step-2.png",
-  },
-  {
-    id: 3,
-    title: "Let Us Handle It",
-    description:
-      "A trained professional arrives on time and gets the job done—no hassle, no stress.",
-    image: "/step-3.png",
-  },
-];
+import { useState, useEffect, useRef } from "react";
+import { Check, Signal, Wifi, Battery } from "lucide-react";
+import { Images } from "@/assets";
 
 const HowItWorks = () => {
   const [activeStep, setActiveStep] = useState(0);
+  const intervalRef = useRef(null);
 
-  const handleStepClick = (index) => {
-    console.log("Clicked step:", index);
-    setActiveStep(index);
+  const steps = [
+    {
+      title: "Choose Your Service",
+      description:
+        "Open the app or website and select the service you need—from cleaning to grooming.",
+      image: Images.worksHome,
+    },
+    {
+      title: "Pick Date, Time & Location",
+      description: "Tell us when and where, and we'll take care of the rest.",
+      image: Images.worksHome,
+    },
+    {
+      title: "Let Us Handle It",
+      description:
+        "A trained professional arrives on time and gets the job done—no hassle, no stress.",
+      image: Images.worksHome,
+    },
+  ];
+
+  // Start auto-animation
+  const startAutoAnimation = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+
+    intervalRef.current = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % steps.length);
+    }, 4000);
   };
 
+  // Handle manual step click
+  const handleStepClick = (index) => {
+    setActiveStep(index);
+    startAutoAnimation(); // Restart animation from clicked step
+  };
+
+  // Initialize auto-animation
+  useEffect(() => {
+    startAutoAnimation();
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, []);
+
   return (
-    <section className="w-full py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
+    <section className="w-full py-16 md:py-24 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-start">
+        {/* Badge */}
+        <div className="flex justify-start mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 border border-purple-200 rounded-full">
+            <Check className="w-4 h-4 text-primary" />
+            <span className="text-sm font-medium text-primary">
+              Fast & Easy Booking
+            </span>
+          </div>
+        </div>
+
+        {/* Heading */}
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+          <span className="text-gray-400">HOW </span>
+          <span className="text-primary">IT WORKS</span>
+        </h2>
+
+        <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-12 md:mb-16">
+          In just a few taps, your service is scheduled.
+        </p>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left Side - Steps */}
-          <div className="relative order-2 lg:order-1">
-            {/* Vertical Line Background */}
-            <div className="absolute left-0 top-0 w-1 h-full bg-gray-200 rounded-full"></div>
+          <div className="relative">
+            {/* Gray Background Line */}
+            <div className="absolute left-0 top-0 w-1 h-full bg-gray-200 rounded-full" />
 
-            {/* Animated Blue Line */}
+            {/* Animated Purple Line */}
             <div
-              className="absolute left-0 top-0 w-1 bg-primary rounded-full transition-all duration-700 ease-in-out"
-              style={{
-                height: `${((activeStep + 1) / steps.length) * 100}%`,
-              }}
-            ></div>
+              className="absolute left-0 top-0 w-1 bg-primary rounded-full transition-all duration-1000 ease-in-out"
+              style={{ height: `${((activeStep + 1) / 3) * 100}%` }}
+            />
 
-            {/* Steps List */}
-            <div className="space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12 pl-6 sm:pl-8 md:pl-10 lg:pl-12">
-              {steps.map((step, index) => (
+            {/* Steps */}
+            <div className="space-y-12 pl-8 md:pl-12">
+              {steps.map((step, idx) => (
                 <div
-                  key={step.id}
-                  onClick={() => handleStepClick(index)}
-                  className={`cursor-pointer transition-all duration-300 ${
-                    activeStep === index
-                      ? "opacity-100"
-                      : "opacity-50 hover:opacity-75"
-                  }`}
-                >
+                  key={idx}
+                  onClick={() => handleStepClick(idx)}
+                  className="cursor-pointer transition-all duration-500"
+                  style={{
+                    opacity: activeStep === idx ? 1 : 0.4,
+                    transform: activeStep === idx ? "scale(1)" : "scale(0.95)",
+                  }}>
                   <h3
-                    className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 leading-tight transition-colors ${
-                      activeStep === index ? "text-primary" : "text-gray-900"
-                    }`}
-                  >
+                    className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-3 transition-colors duration-500"
+                    style={{
+                      color: activeStep === idx ? "#7c3aed" : "#111827",
+                    }}>
                     {step.title}
                   </h3>
-                  <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
+                  <p className="text-sm sm:text-base md:text-lg text-gray-600">
                     {step.description}
                   </p>
                 </div>
@@ -81,53 +114,19 @@ const HowItWorks = () => {
           </div>
 
           {/* Right Side - Phone Mockup */}
-          <div className="flex justify-center lg:justify-end order-1 lg:order-2 lg:sticky lg:top-24">
-            <div className="relative w-full max-w-xs sm:max-w-sm">
-              <div className="bg-gray-900 rounded-[40px] sm:rounded-[50px] shadow-2xl p-2 sm:p-3">
-                <div className="bg-white rounded-[32px] sm:rounded-[42px] overflow-hidden relative aspect-[9/19.5]">
-                  {/* Status Bar */}
-                  <div className="absolute top-0 left-0 right-0 z-20 px-4 sm:px-6 pt-2 sm:pt-3 pb-1 sm:pb-2 flex items-center justify-between text-xs font-semibold bg-white">
-                    <span>9:41</span>
-                    <div className="flex items-center gap-1">
-                      <Signal className="w-3 h-3 sm:w-4 sm:h-4" />
-                      <Wifi className="w-3 h-3 sm:w-4 sm:h-4" />
-                      <Battery className="w-4 h-4 sm:w-5 sm:h-5" />
-                    </div>
-                  </div>
-
-                  {/* Notch */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 sm:w-32 h-6 sm:h-7 bg-gray-900 rounded-b-3xl z-10"></div>
-
-                  {/* App Screen */}
-                  <div className="relative h-full w-full bg-gray-50">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center p-4">
-                        <div className="text-6xl mb-4">
-                          {activeStep === 0 && "🎯"}
-                          {activeStep === 1 && "📅"}
-                          {activeStep === 2 && "✅"}
-                        </div>
-                        <p className="text-lg font-bold text-primary">
-                          Step {activeStep + 1}
-                        </p>
-                        <p className="text-sm text-gray-600 mt-2">
-                          {steps[activeStep].title}
-                        </p>
-                      </div>
-                    </div>
-                    <Image
-                      key={activeStep}
-                      src={steps[activeStep].image}
-                      alt={steps[activeStep].title}
-                      fill
-                      className="object-cover object-top"
-                      onError={(e) => {
-                        e.currentTarget.style.display = "none";
-                      }}
-                    />
-                  </div>
+          <div className="relative w-full">
+            <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px]">
+              {steps.map((step, idx) => (
+                <div key={idx} className="object-contain">
+                  <Image
+                    src={step.image}
+                    alt={step.title}
+                    fill
+                    className="object-cover object-top"
+                    priority={idx === 0}
+                  />
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>

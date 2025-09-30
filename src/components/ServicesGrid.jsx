@@ -96,12 +96,12 @@ const services = [
 const ServicesGrid = () => {
   return (
     <section className="w-full bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left Side - Content */}
           <div className="flex flex-col justify-start">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 border border-purple-200 rounded-full mb-6 w-fit">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 border border-purple-200 rounded-full mb-2 w-fit">
               <Check className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-primary">
                 Vetted Professionals
@@ -109,7 +109,7 @@ const ServicesGrid = () => {
             </div>
 
             {/* Heading */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 leading-tight">
               <span className="text-primary">SERVICES</span>{" "}
               <span className="text-gray-400">WE OFFER</span>
             </h2>
@@ -127,8 +127,7 @@ const ServicesGrid = () => {
               <Link
                 key={service.id}
                 href={service.href}
-                className="flex flex-col items-center gap-3 p-4 bg-gray-50 rounded-2xl group"
-              >
+                className="flex flex-col items-center gap-3 p-4 bg-gray-50 rounded-2xl group">
                 <div className="relative w-16 h-16 sm:w-20 sm:h-20">
                   <Image
                     src={service.icon}

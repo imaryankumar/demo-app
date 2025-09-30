@@ -23,7 +23,7 @@ const stats = [
 
 const StatsSection = () => {
   return (
-    <section className="w-full py-16 md:py-24 bg-white">
+    <section className="w-full pb-16 md:pb-24 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center mb-12 md:mb-16">
@@ -57,8 +57,7 @@ const StatsSection = () => {
         <div className="flex justify-center">
           <Link
             href="/book-service"
-            className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-semibold text-lg rounded-xl hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl"
-          >
+            className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-semibold text-lg rounded-xl hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl">
             Book Your Service
           </Link>
         </div>
