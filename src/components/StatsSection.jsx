@@ -1,6 +1,7 @@
 // app/components/StatsSection.tsx
 "use client";
 
+import BookServiceButton from "@/utils/BookServiceButton";
 import Link from "next/link";
 
 const stats = [
@@ -26,22 +27,22 @@ const StatsSection = () => {
     <section className="w-full pb-16 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 leading-tight">
+        <div className="text-center mb-4 lg:mb-14">
+          <h2 className="text-xl sm:text-4xl md:text-5xl font-bold mb-2 leading-tight">
             <span className="text-primary">TRUSTED BY THOUSANDS,</span>{" "}
             <span className="text-gray-400">EVERY DAY</span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-7xl mx-auto">
+          <p className="text-xs sm:text-lg md:text-xl text-gray-600 max-w-7xl mx-auto">
             Right Hands is the go-to choice for fast, reliable home
             services—delivered with care and quality.
           </p>
         </div>
 
         {/* Stats Cards */}
-        <div className="bg-[#FAFAFA] rounded-3xl p-8 sm:p-10 md:p-12 lg:p-16 mb-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+        <div className="py-2 mb-4 lg:mb-12">
+          <div className="rounded-3xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-0">
             {stats.map((stat) => (
-              <div key={stat.id} className="text-center">
+              <div key={stat.id} className="text-center bg-[#FAFAFA] py-4 lg:py-16 rounded-2xl lg:rounded-none">
                 <h3 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-3 md:mb-4">
                   {stat.number}
                 </h3>
@@ -54,13 +55,7 @@ const StatsSection = () => {
         </div>
 
         {/* CTA Button */}
-        <div className="flex justify-center">
-          <Link
-            href="/book-service"
-            className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-semibold text-lg rounded-xl hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl">
-            Book Your Service
-          </Link>
-        </div>
+       <BookServiceButton/>
       </div>
     </section>
   );

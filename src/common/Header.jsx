@@ -20,8 +20,8 @@ const Header = () => {
   const [servicesOpen, setServicesOpen] = useState(false);
 
   return (
-    <header className="w-full relative bg-white">
-      <div className="mx-auto max-w-7xl flex h-16 items-center justify-between px-4">
+    <header className="w-full relative bg-white px-2">
+      <div className="mx-auto max-w-7xl flex h-16 items-center justify-between">
         <div className="flex items-center gap-12">
           <Link href="/" className="flex items-center gap-2">
             <Image

@@ -13,25 +13,25 @@ const PocketPoster = ({
   paddingTop="pt-0"
 }) => {
   return (
-    <section className="w-full py-12 md:py-16 lg:py-24">
+    <section className="w-full px-2 py-12 md:py-16 lg:py-24">
       <div
-        className={`mx-auto max-w-7xl px-4 md:px-8 lg:px-16 rounded-3xl lg:rounded-[40px] overflow-hidden ${bgColor}`}
+        className={`mx-auto max-w-7xl px-2 md:px-8 lg:px-16 rounded-3xl lg:rounded-[40px] overflow-hidden ${bgColor}`}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 md:gap-12 items-center">
           {/* Left Content */}
           <div className="text-white py-12 md:py-16 lg:py-20">
             {/* Heading */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-6 text-center lg:text-left leading-tight">
               {headingText}
             </h2>
 
             {/* Description */}
-            <p className="text-base sm:text-lg md:text-xl font-medium mb-6 md:mb-8 leading-relaxed opacity-95">
+            <p className="text-xs sm:text-lg md:text-xl text-center lg:text-left font-medium mb-6 md:mb-8 leading-relaxed opacity-95">
               {description}
             </p>
 
             {/* Download Buttons */}
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-3">
               <Link
                 href="https://apps.apple.com"
                 target="_blank"
@@ -78,12 +78,11 @@ const PocketPoster = ({
           </div>
 
           {/* Right Content - Mobile Mockup */}
-         <div className={`relative h-[500px] flex items-center justify-center lg:justify-end ${paddingTop}`}>
+         <div className={`relative h-[300px] lg:h-[500px] flex items-center justify-center lg:justify-end ${paddingTop}`}>
             <Image
               src={image}
               alt="Right Hands App"
-              width={600}
-              height={700}
+             fill
               className="object-contain object-bottom"
             />
           </div>

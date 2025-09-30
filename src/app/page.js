@@ -25,8 +25,8 @@ export default function Home() {
       <StatsSection />
       <FeaturedServices />
       <WhyChooseUs />
+        <ScheduleService />
       <ProfessionalsBanner />
-      <ScheduleService />
       <PocketPoster
         headingText={"Invite & Earn 40 AED!"}
         description={

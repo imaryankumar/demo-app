@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Settings, Clock, Sparkles, Zap, Shield, Wallet } from "lucide-react";
 import { Images } from "@/assets";
 import Image from "next/image";
+import BookServiceButton from "@/utils/BookServiceButton";
 
 const features = [
   {
@@ -76,28 +77,22 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="w-full py-16 md:py-24 bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="w-full py-8 lg:py-16 md:py-24 bg-white">
+      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-12 md:mb-16 gap-6">
+        <div className="flex flex-col lg:flex-row text-center lg:text-left lg:items-center lg:justify-between mb-12 md:mb-16 gap-6">
           <div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 leading-tight">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-2 leading-tight">
               <span className="text-gray-400">WHY </span>
               <span className="text-primary">RIGHT HANDS?</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600">
+            <p className="text-xs sm:text-lg md:text-xl text-gray-600">
               Trusted by hundreds across the city—for a reason.
             </p>
           </div>
 
           {/* CTA Button - Desktop */}
-          <div className="hidden lg:block">
-            <Link
-              href="/book-service"
-              className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-semibold text-lg rounded-xl hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl whitespace-nowrap">
-              Book Your Service
-            </Link>
-          </div>
+          <BookServiceButton/>
         </div>
 
         {/* Features Grid */}
@@ -107,7 +102,7 @@ const WhyChooseUs = () => {
             return (
               <div
                 key={feature.id}
-                className={`${feature.bgColor} rounded-3xl p-6 md:p-8 transition-all duration-300`}>
+                className={`${feature.bgColor} rounded-2xl lg:rounded-3xl p-4 md:p-8 transition-all duration-300`}>
                 {/* Icon */}
                 <div
                   className={`w-10 h-10 ${feature.iconColor} rounded-lg flex items-center justify-center mb-4`}>
@@ -121,27 +116,18 @@ const WhyChooseUs = () => {
 
                 {/* Title */}
                 <h3
-                  className={`text-xl md:text-2xl font-bold mb-3 md:mb-4 ${feature.titleColor}`}>
+                  className={`text-xl md:text-2xl font-bold mb-4 ${feature.titleColor}`}>
                   {feature.title}
                 </h3>
 
                 {/* Description */}
                 <p
-                  className={`text-sm md:text-base leading-relaxed text-center rounded-2xl py-3 px-6 ${feature.textColor}`}>
+                  className={`text-xs md:text-sm leading-relaxed text-start lg:text-center rounded-2xl py-6 lg:py-3 px-2 lg:px-10 ${feature.textColor}`}>
                   {feature.description}
                 </p>
               </div>
             );
           })}
-        </div>
-
-        {/* CTA Button - Mobile */}
-        <div className="flex justify-center lg:hidden mt-8">
-          <Link
-            href="/book-service"
-            className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-semibold text-lg rounded-xl hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl">
-            Book Your Service
-          </Link>
         </div>
       </div>
     </section>

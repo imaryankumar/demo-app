@@ -53,11 +53,11 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="w-full bg-gray-50 pt-20">
+    <section className="w-full bg-gray-50 pt-8 lg:pt-20">
       <div className="mx-auto max-w-7xl px-4">
         {/* Section Header */}
-        <div className="mb-12">
-          <h2 className="text-5xl font-bold mb-2">
+        <div className="mb-6 lg:mb-12">
+          <h2 className="text-2xl lg:text-5xl font-bold mb-2">
             <span className="text-gray-400">FREQUENTLY ASKED </span>
             <span className="text-primary">QUESTIONS</span>
           </h2>
@@ -79,7 +79,7 @@ const FAQSection = () => {
                   className={`w-full flex items-center justify-between text-left hover:bg-gray-50 transition-colors duration-200 ${isOpen ? "pb-0" : "pb-6"}`}
                   aria-expanded={isOpen}
                 >
-                  <span className="text-md font-semibold text-[#181D27] pr-8">
+                  <span className="text-sm lg:text-md font-semibold text-[#181D27] pr-8">
                     {faq.question}
                   </span>
 
@@ -100,8 +100,8 @@ const FAQSection = () => {
                   className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                     }`}
                 >
-                  <div className="pb-6 pt-0 pr-16">
-                    <p className="text-[#181D27] font-normal leading-relaxed">
+                  <div className="pb-6 pt-0 pr-6 lg:pr-16">
+                    <p className="text-[#181D27] text-xs lg:text-base font-normal leading-relaxed">
                       {faq.answer}
                     </p>
                   </div>

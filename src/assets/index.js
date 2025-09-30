@@ -39,6 +39,7 @@ import poster_coin from "../../public/images/pocket/poster_coin.svg";
 import poster_gallery from "../../public/images/pocket/poster_gallery.svg";
 import poster_mobile from "../../public/images/pocket/poster_mobile.svg";
 
+import service_badge from "../../public/images/services/service_badge.svg";
 import frame1 from "../../public/images/services/frame1.png";
 import frame2 from "../../public/images/services/frame2.png";
 import frame3 from "../../public/images/services/frame3.png";
@@ -129,4 +130,5 @@ export const Images = {
   chooseIcon6: choose_icon6,
   profIcon: prof_icon,
   worksHome: works_home,
+  serviceBadge:service_badge
 };

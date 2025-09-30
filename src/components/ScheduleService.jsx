@@ -53,10 +53,10 @@ const HowItWorks = () => {
   }, []);
 
   return (
-    <section className="w-full py-16 bg-white">
+    <section className="w-full py-8 lg:py-20 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Badge */}
-        <div className="flex justify-start mb-6">
+        <div className="flex justify-center lg:justify-start mb-6">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 border border-purple-200 rounded-full">
             <Check className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">
@@ -66,12 +66,12 @@ const HowItWorks = () => {
         </div>
 
         {/* Heading */}
-        <h2 className="text-3xl sm:text-4xl md:text-5xl  font-bold mb-2 leading-tight">
+        <h2 className="text-xl sm:text-4xl md:text-5xl text-center lg:text-left font-bold mb-2 leading-tight">
           <span className="text-gray-400">HOW </span>
           <span className="text-primary">IT WORKS</span>
         </h2>
 
-        <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8">
+        <p className="text-xs sm:text-lg md:text-xl text-center lg:text-left text-gray-600 mb-8">
           In just a few taps, your service is scheduled.
         </p>
 
@@ -114,7 +114,7 @@ const HowItWorks = () => {
           </div>
 
           {/* Right Side - Phone Mockup */}
-          <div className="relative w-full bg-[#F9FAFB] rounded-xl px-16 pt-8">
+          <div className="relative w-full bg-[#F9FAFB] rounded-xl px-16 pt-8 hidden lg:block">
             <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px]">
               {steps.map((step, idx) => (
                 <div key={idx} className="object-contain">

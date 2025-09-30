@@ -22,3 +22,15 @@
 body {
   @apply bg-background text-foreground font-sans antialiased;
 }
+
+.primary-text{
+  @apply text-[28px] md:text-[46px] lg:text-[72px]
+}
+
+.secondary-text{
+  @apply text-[12px] md:text-[20px] lg:text-[24px]
+}
+
+.accent-text{
+  @apply text-[10px] md:text-[14px] lg:text-[18px]
+}

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Check } from "lucide-react";
 import { Images } from "@/assets";
+import BookServiceButton from "@/utils/BookServiceButton";
 
 const testimonials = [
   {
@@ -76,7 +77,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="w-full bg-gray-50 py-16 md:py-24">
+    <section className="w-full py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4">
         {/* Badge */}
         <div className="flex justify-center mb-6">
@@ -96,11 +97,11 @@ const Testimonials = () => {
         </h2>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 mb-12">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-white rounded-2xl p-6 shadow-xs transition-shadow"
+              className="rounded-xl p-6 shadow-xs transition-shadow bg-[#FAFAFF]"
             >
               {/* Stars */}
               <div className="flex gap-1 mb-4">
@@ -142,14 +143,7 @@ const Testimonials = () => {
         </div>
 
         {/* CTA Button */}
-        <div className="flex justify-center">
-          <Link
-            href="/book-service"
-            className="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl"
-          >
-            Book Your Service
-          </Link>
-        </div>
+       <BookServiceButton/>
       </div>
     </section>
   );

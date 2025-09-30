@@ -95,56 +95,62 @@ const services = [
 
 const ServicesGrid = () => {
   return (
-    <section className="w-full bg-white">
-      <div className="mx-auto max-w-7xl px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Left Side - Content */}
-          <div className="flex flex-col justify-start">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 border border-purple-200 rounded-full mb-2 w-fit">
-              <Check className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">
-                Vetted Professionals
-              </span>
-            </div>
-
-            {/* Heading */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 leading-tight">
-              <span className="text-primary">SERVICES</span>{" "}
-              <span className="text-gray-400">WE OFFER</span>
-            </h2>
-
-            {/* Description */}
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
-              One app. All the services you need—from daily cleaning to expert
-              fixes.
-            </p>
-          </div>
-
-          {/* Right Side - Services Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
-            {services.map((service) => (
-              <Link
-                key={service.id}
-                href={service.href}
-                className="flex flex-col items-center gap-3 p-4 bg-gray-50 rounded-2xl group">
-                <div className="relative w-16 h-16 sm:w-20 sm:h-20">
-                  <Image
-                    src={service.icon}
-                    alt={service.name}
-                    fill
-                    className="object-contain group-hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-                <p className="text-xs sm:text-sm font-semibold text-gray-700 text-center leading-tight">
-                  {service.name}
-                </p>
-              </Link>
-            ))}
-          </div>
+<section className="w-full bg-white px-2">
+  <div className="mx-auto max-w-7xl px-0 lg:px-14">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center lg:items-start">
+      
+      {/* Left Side - Content */}
+      <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
+        
+        {/* Badge */}
+        <div className="inline-flex items-center mb-4">
+          <Image
+            src={Images.serviceBadge}
+            alt="header badge"
+            className="w-40 lg:w-48 h-10 lg:h-12 object-contain"
+            priority
+          />
         </div>
+
+        {/* Heading */}
+        <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-2 leading-tight">
+          <span className="text-primary">SERVICES</span>{" "}
+          <span className="text-gray-400">WE OFFER</span>
+        </h2>
+
+        {/* Description */}
+        <p className="text-xs sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl">
+          One app. All the services you need—from daily cleaning to expert fixes.
+        </p>
       </div>
-    </section>
+
+      {/* Right Side - Services Grid */}
+      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 gap-1 lg:gap-5 items-center justify-center ">
+        {services.map((service) => (
+          <Link
+            key={service.id}
+            href={service.href}
+            className="flex flex-col items-center justify-between gap-3 p-2 lg:p-4 bg-[#F9FAFB] rounded lg:rounded-2xl group h-full"
+          >
+            <div className="relative w-12 h-12 sm:w-20 sm:h-20">
+              <Image
+                src={service.icon}
+                alt={service.name}
+                fill
+                className="object-contain group-hover:scale-110 transition-transform duration-300"
+              />
+            </div>
+            <p className="text-xs sm:text-sm lg:text-md font-semibold text-gray-700 text-center leading-tight">
+              {service.name}
+            </p>
+          </Link>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>
+
   );
 };
 
