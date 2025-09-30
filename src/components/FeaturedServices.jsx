@@ -34,11 +34,11 @@ const services = [
 
 const FeaturedServices = () => {
   return (
-    <section className="w-full py-16 md:py-24 bg-gray-50">
+    <section className="w-full py-20 bg-[#FAFAFF]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 leading-tight">
             <span className="text-primary">YOU NAME IT.</span>{" "}
             <span className="text-gray-400">WE DO IT.</span>
           </h2>
@@ -51,33 +51,31 @@ const FeaturedServices = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
           {services.map((service) => (
-            <div
-              key={service.id}
-              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+            <div key={service.id} className="overflow-hidden group">
               {/* Image */}
               <div className="relative h-64 md:h-72 overflow-hidden">
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-300"
+                  className="object-cover rounded-2xl"
                 />
               </div>
 
               {/* Content */}
-              <div className="p-6">
+              <div className="py-4">
                 {/* Discount Badge */}
-                <p className="text-sm font-semibold text-primary mb-3">
+                <p className="text-sm font-semibold text-primary mb-2">
                   {service.discount}
                 </p>
 
                 {/* Title */}
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-1">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-base text-gray-600 mb-6">
+                <p className="text-base text-gray-600 mb-4">
                   {service.description}
                 </p>
 

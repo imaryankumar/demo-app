@@ -13,10 +13,10 @@ const features = [
     title: "Vetted Professionals",
     description:
       "Every service provider is background-checked and quality-tested before joining our platform.",
-    bgColor: "bg-purple-100",
-    iconColor: "text-purple-600",
+    bgColor: "bg-[#EBE9FE]",
+    iconColor: "text-purple-600 bg-[#7F56D9]",
     titleColor: "text-purple-600",
-    textColor: "text-purple-700",
+    textColor: "text-purple-700 bg-[#FFFFFF4D]",
   },
   {
     id: 2,
@@ -24,10 +24,10 @@ const features = [
     title: "On-Time, Every Time",
     description:
       "We value your time—our pros arrive exactly when you need them, no delays.",
-    bgColor: "bg-green-100",
-    iconColor: "text-green-600",
+    bgColor: "bg-[#DCFAE6]",
+    iconColor: "text-green-600 bg-[#079455]",
     titleColor: "text-green-600",
-    textColor: "text-green-700",
+    textColor: "text-green-700 bg-[#FFFFFF4D]",
   },
   {
     id: 3,
@@ -35,20 +35,20 @@ const features = [
     title: "Wide Range of Services",
     description:
       "From cleaning to pet grooming, book all your home needs in one place.",
-    bgColor: "bg-cyan-100",
-    iconColor: "text-cyan-600",
+    bgColor: "bg-[#ECFDFF]",
+    iconColor: "text-cyan-600 bg-[#06AED4]",
     titleColor: "text-cyan-600",
-    textColor: "text-cyan-700",
+    textColor: "text-cyan-700 bg-[#FFFFFF4D]",
   },
   {
     id: 4,
     icon: Images.chooseIcon4,
     title: "Same-Day Availability",
     description: "Need help today? Get services on-demand, often within hours.",
-    bgColor: "bg-orange-100",
-    iconColor: "text-orange-600",
+    bgColor: "bg-orange-100 bg-[#FFFAEB]",
+    iconColor: "text-orange-600 bg-[#FF9C66]",
     titleColor: "text-orange-600",
-    textColor: "text-orange-700",
+    textColor: "text-orange-700 bg-[#FFFFFF4D]",
   },
   {
     id: 5,
@@ -56,10 +56,10 @@ const features = [
     title: "Safe & Secure",
     description:
       "From background-checked professionals to services delivered with care in your home.",
-    bgColor: "bg-pink-100",
-    iconColor: "text-pink-600",
+    bgColor: "bg-pink-100 bg-[#FDF2FA]",
+    iconColor: "text-pink-600 bg-[#F670C7]",
     titleColor: "text-pink-600",
-    textColor: "text-pink-700",
+    textColor: "text-pink-700 bg-[#FFFFFF4D]",
   },
   {
     id: 6,
@@ -67,10 +67,10 @@ const features = [
     title: "No Hidden Fees",
     description:
       "What you see is what you pay—clear, upfront pricing every time.",
-    bgColor: "bg-indigo-100",
-    iconColor: "text-indigo-600",
+    bgColor: "bg-indigo-100 bg-[#EEF4FF]",
+    iconColor: "text-indigo-600 bg-[#8098F9]",
     titleColor: "text-indigo-600",
-    textColor: "text-indigo-700",
+    textColor: "text-indigo-700 bg-[#FFFFFF4D]",
   },
 ];
 
@@ -81,7 +81,7 @@ const WhyChooseUs = () => {
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-12 md:mb-16 gap-6">
           <div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 leading-tight">
               <span className="text-gray-400">WHY </span>
               <span className="text-primary">RIGHT HANDS?</span>
             </h2>
@@ -107,10 +107,10 @@ const WhyChooseUs = () => {
             return (
               <div
                 key={feature.id}
-                className={`${feature.bgColor} rounded-3xl p-6 md:p-8 transition-all duration-300 hover:shadow-lg`}>
+                className={`${feature.bgColor} rounded-3xl p-6 md:p-8 transition-all duration-300`}>
                 {/* Icon */}
                 <div
-                  className={`w-12 h-12 md:w-14 md:h-14 ${feature.bgColor} rounded-xl flex items-center justify-center mb-4 md:mb-6 shadow-sm`}>
+                  className={`w-10 h-10 ${feature.iconColor} rounded-lg flex items-center justify-center mb-4`}>
                   <Image
                     src={feature.icon}
                     width={20}
@@ -127,7 +127,7 @@ const WhyChooseUs = () => {
 
                 {/* Description */}
                 <p
-                  className={`text-sm md:text-base leading-relaxed ${feature.textColor}`}>
+                  className={`text-sm md:text-base leading-relaxed text-center rounded-2xl py-3 px-6 ${feature.textColor}`}>
                   {feature.description}
                 </p>
               </div>

@@ -53,7 +53,7 @@ const HowItWorks = () => {
   }, []);
 
   return (
-    <section className="w-full py-16 md:py-24 bg-white">
+    <section className="w-full py-16 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Badge */}
         <div className="flex justify-start mb-6">
@@ -66,18 +66,18 @@ const HowItWorks = () => {
         </div>
 
         {/* Heading */}
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl  font-bold mb-2 leading-tight">
           <span className="text-gray-400">HOW </span>
           <span className="text-primary">IT WORKS</span>
         </h2>
 
-        <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-12 md:mb-16">
+        <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8">
           In just a few taps, your service is scheduled.
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left Side - Steps */}
-          <div className="relative">
+          <div className="relative h-full">
             {/* Gray Background Line */}
             <div className="absolute left-0 top-0 w-1 h-full bg-gray-200 rounded-full" />
 
@@ -88,18 +88,18 @@ const HowItWorks = () => {
             />
 
             {/* Steps */}
-            <div className="space-y-12 pl-8 md:pl-12">
+            <div className="pl-8 flex flex-col items-start justify-between md:pl-12 h-full">
               {steps.map((step, idx) => (
                 <div
                   key={idx}
                   onClick={() => handleStepClick(idx)}
-                  className="cursor-pointer transition-all duration-500"
+                  className="cursor-pointer transition-all duration-500 py-8"
                   style={{
                     opacity: activeStep === idx ? 1 : 0.4,
                     transform: activeStep === idx ? "scale(1)" : "scale(0.95)",
                   }}>
                   <h3
-                    className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-3 transition-colors duration-500"
+                    className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-1 transition-colors duration-500"
                     style={{
                       color: activeStep === idx ? "#7c3aed" : "#111827",
                     }}>
@@ -114,7 +114,7 @@ const HowItWorks = () => {
           </div>
 
           {/* Right Side - Phone Mockup */}
-          <div className="relative w-full">
+          <div className="relative w-full bg-[#F9FAFB] rounded-xl px-16 pt-8">
             <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px]">
               {steps.map((step, idx) => (
                 <div key={idx} className="object-contain">
