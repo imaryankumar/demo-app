@@ -57,7 +57,7 @@ const Header = () => {
 
                   {/* Mega Dropdown */}
                   {servicesOpen && (
-                    <div className="fixed left-0 right-0 top-16 w-full border-b bg-white shadow-md z-50">
+                    <div className="fixed left-0 right-0 top-14 w-full border-b bg-white shadow-md z-50">
                       <div className="mx-auto max-w-7xl px-4 py-6 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                         {/* Services */}
                         <div className="md:col-span-2">
@@ -142,7 +142,7 @@ const Header = () => {
             <DropdownMenuTrigger asChild>
               <Button
                 variant="outline"
-                className="flex items-center gap-2 text-xs sm:text-sm cursor-pointer"
+                className="flex items-center gap-2 text-xs sm:text-sm cursor-pointer hover:bg-white "
               >
                 <Globe className="h-4 w-4" />
                 English
@@ -158,18 +158,81 @@ const Header = () => {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-64 p-4 bg-white">
               {/* unchanged content */}
+              <div className="space-y-4">
+                <div>
+                  <p className="text-sm text-gray-500 mb-3">Country</p>
+                  <div className="space-y-2">
+                    <label className="flex items-center justify-between p-2 rounded-lg hover:bg-gray-50 cursor-pointer">
+                      <div className="flex items-center gap-3">
+                        <Image
+                          src={Images.languageQA}
+                          alt="Qatar"
+                          width={24}
+                          height={24}
+                          className="rounded-sm"
+                        />
+                        <span className="text-sm">Qatar</span>
+                      </div>
+                      <input
+                        type="radio"
+                        name="country"
+                        className="w-4 h-4 text-primary"
+                      />
+                    </label>
+                    <label className="flex items-center justify-between p-2 rounded-lg hover:bg-gray-50 cursor-pointer">
+                      <div className="flex items-center gap-3">
+                        <Image
+                          src={Images.countryIcon}
+                          alt="UAE"
+                          width={24}
+                          height={24}
+                          className="rounded-sm"
+                        />
+                        <span className="text-sm">United Arab Emirates</span>
+                      </div>
+                      <input
+                        type="radio"
+                        name="country"
+                        defaultChecked
+                        className="w-4 h-4 text-primary"
+                      />
+                    </label>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500 mb-3">Language</p>
+                  <div className="space-y-2">
+                    <label className="flex items-center justify-between p-2 rounded-lg hover:bg-gray-50 cursor-pointer">
+                      <span className="text-sm">English</span>
+                      <input
+                        type="radio"
+                        name="language"
+                        defaultChecked
+                        className="w-4 h-4 text-primary"
+                      />
+                    </label>
+                    <label className="flex items-center justify-between p-2 rounded-lg hover:bg-gray-50 cursor-pointer">
+                      <span className="text-sm">Arabic</span>
+                      <input
+                        type="radio"
+                        name="language"
+                        className="w-4 h-4 text-primary"
+                      />
+                    </label>
+                  </div>
+                </div>
+              </div>
             </DropdownMenuContent>
           </DropdownMenu>
           <span className="hidden lg:inline-block h-8 border-r border-gray-300"></span>
           <Button
             variant="outline"
-            size="sm"
-            className="text-xs sm:text-sm border-gray-300"
+            className="text-lg sm:text-sm hover:bg-white cursor-pointer border-gray-300"
           >
             Log in
           </Button>
           <Button
-            size="sm"
+         
             className="bg-primary text-white text-xs sm:text-sm"
           >
             Sign up
