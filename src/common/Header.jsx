@@ -211,7 +211,7 @@ const Header = () => {
                       </span>
                     </button>
                     {mobileServicesOpen && (
-                      <div className="mt-3 flex flex-col gap-2 pl-3 max-h-96 overflow-y-auto">
+                      <div className="mt-3 flex flex-col gap-2 pl-3 max-h-80 overflow-y-auto">
                         {services.map((service) => (
                           <Link
                             key={service.name}
