@@ -42,7 +42,7 @@ const FeaturedServices = () => {
             <span className="text-primary">YOU NAME IT.</span>{" "}
             <span className="text-gray-400">WE DO IT.</span>
           </h2>
-          <p className="text-xs sm:text-lg md:text-xl text-gray-600">
+          <p className="text-xs sm:text-base md:text-lg lg:text-xl text-gray-600">
             Book your service in less than a minute and enjoy a special discount
             on your first booking!
           </p>
@@ -81,8 +81,9 @@ const FeaturedServices = () => {
 
                 {/* Book Now Button */}
                 <Link
-                  href={service.href}
-                  className="block w-full text-center py-3 px-6 border-2 border-primary text-primary font-semibold rounded-xl hover:bg-primary hover:text-white transition-all duration-300">
+                  href={"#" || service.href}
+                  className="block w-full text-center py-3 px-6 border-2 border-primary text-primary font-semibold rounded-xl hover:bg-primary hover:text-white transition-all duration-300"
+                >
                   Book Now
                 </Link>
               </div>
@@ -93,8 +94,9 @@ const FeaturedServices = () => {
         {/* View All Button */}
         <div className="flex justify-center">
           <Link
-            href="/services"
-            className="inline-flex text-sm sm:text-lg md:text-xl items-center justify-center px-4 lg:px-5 py-3 bg-primary text-white font-semibold rounded-lg lg:rounded-xl hover:bg-primary/90 transition-colors shadow-lg">
+            href="#"
+            className="inline-flex text-sm sm:text-lg md:text-xl items-center justify-center px-4 lg:px-5 py-3 bg-primary text-white font-semibold rounded-lg lg:rounded-xl hover:bg-primary/90 transition-colors"
+          >
             View All
           </Link>
         </div>

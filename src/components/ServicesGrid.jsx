@@ -125,11 +125,11 @@ const ServicesGrid = () => {
       </div>
 
       {/* Right Side - Services Grid */}
-      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 gap-1 lg:gap-5 items-center justify-center ">
+      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 gap-1 sm:gap-2 md:gap-3 lg:gap-5 items-center justify-center ">
         {services.map((service) => (
           <Link
             key={service.id}
-            href={service.href}
+            href={"#" || service.href}
             className="flex flex-col items-center justify-between gap-3 p-2 lg:p-4 bg-[#F9FAFB] rounded lg:rounded-2xl group h-full"
           >
             <div className="relative w-12 h-12 sm:w-20 sm:h-20">

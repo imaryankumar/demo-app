@@ -25,19 +25,18 @@ const stats = [
 const StatsSection = () => {
   return (
     <section className="w-full pb-16 bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-6">
         {/* Heading */}
-        <div className="text-center mb-4 lg:mb-14">
-          <h2 className="text-xl sm:text-4xl md:text-5xl font-bold mb-2 leading-tight">
+        <div className="text-center mb-6 lg:mb-14">
+          <h2 className="text-xl sm:text-4xl md:text-5xl font-bold mb-3 leading-tight">
             <span className="text-primary">TRUSTED BY THOUSANDS,</span>{" "}
             <span className="text-gray-400">EVERY DAY</span>
           </h2>
-          <p className="text-xs sm:text-lg md:text-xl text-gray-600 max-w-7xl mx-auto">
-            Right Hands is the go-to choice for fast, reliable home
-            services—delivered with care and quality.
+          <p className="text-xs sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
+            Right Hands is the go-to choice for fast, reliable home services—
+            delivered with care and quality.
           </p>
         </div>
-
         {/* Stats Cards */}
         <div className="py-2 mb-4 lg:mb-12">
           <div className="rounded-3xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-0">
@@ -55,7 +54,7 @@ const StatsSection = () => {
         </div>
 
         {/* CTA Button */}
-       <BookServiceButton/>
+        <BookServiceButton />
       </div>
     </section>
   );

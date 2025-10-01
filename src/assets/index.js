@@ -32,6 +32,10 @@ import header_badge from "../../public/images/header_Badge.svg";
 import trusted_icon from "../../public/images/trusted_icon.svg";
 import prof_icon from "../../public/images/prof_icon.svg";
 import works_home from "../../public/images/works_home.svg";
+import schedule_badge from "../../public/images/schedule_badge.svg";
+import testimonial_badge from "../../public/images/testimonial_badge.svg";
+
+
 
 import poster_apple from "../../public/images/pocket/poster_apple.svg";
 import poster_badges from "../../public/images/pocket/poster_badges.svg";
@@ -130,5 +134,7 @@ export const Images = {
   chooseIcon6: choose_icon6,
   profIcon: prof_icon,
   worksHome: works_home,
-  serviceBadge:service_badge
+  serviceBadge:service_badge,
+  scheduleBadge:schedule_badge,
+  testimonialBadge:testimonial_badge
 };

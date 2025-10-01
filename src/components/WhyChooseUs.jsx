@@ -77,7 +77,7 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="w-full py-8 lg:py-16 md:py-24 bg-white">
+    <section className="w-full py-8 md:py-24 lg:py-16 bg-white">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col lg:flex-row text-center lg:text-left lg:items-center lg:justify-between mb-12 md:mb-16 gap-6">
@@ -86,13 +86,13 @@ const WhyChooseUs = () => {
               <span className="text-gray-400">WHY </span>
               <span className="text-primary">RIGHT HANDS?</span>
             </h2>
-            <p className="text-xs sm:text-lg md:text-xl text-gray-600">
+            <p className="text-xs sm:text-base md:text-lg lg:text-xl text-gray-600">
               Trusted by hundreds across the city—for a reason.
             </p>
           </div>
 
           {/* CTA Button - Desktop */}
-          <BookServiceButton/>
+          <BookServiceButton />
         </div>
 
         {/* Features Grid */}
@@ -102,10 +102,12 @@ const WhyChooseUs = () => {
             return (
               <div
                 key={feature.id}
-                className={`${feature.bgColor} rounded-2xl lg:rounded-3xl p-4 md:p-8 transition-all duration-300`}>
+                className={`${feature.bgColor} rounded-2xl lg:rounded-3xl p-4 md:p-8`}
+              >
                 {/* Icon */}
                 <div
-                  className={`w-10 h-10 ${feature.iconColor} rounded-lg flex items-center justify-center mb-4`}>
+                  className={`w-10 h-10 ${feature.iconColor} rounded-lg flex items-center justify-center mb-4`}
+                >
                   <Image
                     src={feature.icon}
                     width={20}
@@ -116,21 +118,27 @@ const WhyChooseUs = () => {
 
                 {/* Title */}
                 <h3
-                  className={`text-xl md:text-2xl font-bold mb-4 ${feature.titleColor}`}>
+                  className={`text-lg sm:text-xl md:text-2xl font-bold mb-4 ${feature.titleColor}`}
+                >
                   {feature.title}
                 </h3>
 
                 {/* Description */}
-                <p
-                  className={`text-xs md:text-sm leading-relaxed text-start lg:text-center rounded-2xl py-6 lg:py-3 px-2 lg:px-10 ${feature.textColor}`}>
-                  {feature.description}
-                </p>
+                <div className="flex flex-col">
+                  <p
+                    className={`text-xs sm:text-sm md:text-base leading-relaxed rounded-xl text-start lg:text-center py-6 lg:py-3 px-2 lg:px-4 ${feature.textColor} min-h-[96px]`}
+                  >
+                    {feature.description}
+                  </p>
+                </div>
+
               </div>
             );
           })}
         </div>
       </div>
     </section>
+
   );
 };
 
