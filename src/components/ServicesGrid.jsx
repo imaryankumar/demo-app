@@ -95,62 +95,60 @@ const services = [
 
 const ServicesGrid = () => {
   return (
-<section className="w-full bg-white px-2">
-  <div className="mx-auto max-w-7xl px-0 lg:px-14">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center lg:items-start">
-      
-      {/* Left Side - Content */}
-      <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-        
-        {/* Badge */}
-        <div className="inline-flex items-center mb-4">
-          <Image
-            src={Images.serviceBadge}
-            alt="header badge"
-            className="w-40 lg:w-48 h-10 lg:h-12 object-contain"
-            priority
-          />
-        </div>
-
-        {/* Heading */}
-        <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-2 leading-tight">
-          <span className="text-primary">SERVICES</span>{" "}
-          <span className="text-gray-400">WE OFFER</span>
-        </h2>
-
-        {/* Description */}
-        <p className="text-xs sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl">
-          One app. All the services you need—from daily cleaning to expert fixes.
-        </p>
-      </div>
-
-      {/* Right Side - Services Grid */}
-      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 gap-1 sm:gap-2 md:gap-3 lg:gap-5 items-center justify-center ">
-        {services.map((service) => (
-          <Link
-            key={service.id}
-            href={"#" || service.href}
-            className="flex flex-col items-center justify-between gap-3 p-2 lg:p-4 bg-[#F9FAFB] rounded lg:rounded-2xl group h-full"
-          >
-            <div className="relative w-12 h-12 sm:w-20 sm:h-20">
+    <section className="w-full bg-white px-2">
+      <div className="mx-auto max-w-7xl px-0 lg:px-14">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center lg:items-start">
+          {/* Left Side - Content */}
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
+            {/* Badge */}
+            <div className="inline-flex items-center mb-4">
               <Image
-                src={service.icon}
-                alt={service.name}
-                fill
-                className="object-contain group-hover:scale-110 transition-transform duration-300"
+                src={Images.serviceBadge}
+                alt="headers badgers"
+                className="w-40 lg:w-48 h-10 lg:h-12 object-contain"
+                priority
               />
             </div>
-            <p className="text-xs sm:text-sm lg:text-md font-semibold text-gray-700 text-center leading-tight">
-              {service.name}
+
+            {/* Heading */}
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-2 leading-tight">
+              <span className="text-primary">SERVICES</span>{" "}
+              <span className="text-gray-400">WE OFFER</span>
+            </h2>
+
+            {/* Description */}
+            <p className="text-xs sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl">
+              One app. All the services you need—from daily cleaning to expert
+              fixes.
             </p>
-          </Link>
-        ))}
+          </div>
+
+          {/* Right Side - Services Grid */}
+          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 gap-1 sm:gap-2 md:gap-3 lg:gap-5 items-center justify-center ">
+            {services.map((service) => (
+              <Link
+                key={service.id}
+                href={"#" || service.href}
+                className="flex flex-col items-center justify-between gap-3 p-2 lg:p-4 bg-[#F9FAFB] rounded lg:rounded-2xl group h-full"
+              >
+                <div className="relative w-12 h-12 sm:w-20 sm:h-20">
+                  <Image
+                    src={service.icon}
+                    alt={`Icon representing ${service.name}`}
+                    fill
+                    loading="lazy"
+                    className="object-contain group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <p className="text-xs sm:text-sm lg:text-md font-semibold text-gray-700 text-center leading-tight">
+                  {service.name}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
-
-    </div>
-  </div>
-</section>
-
+    </section>
   );
 };
 

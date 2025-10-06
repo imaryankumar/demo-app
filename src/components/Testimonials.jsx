@@ -82,7 +82,7 @@ const Testimonials = () => {
           <div className="inline-flex items-center">
             <Image
               src={Images.testimonialBadge}
-              alt="header badge"
+              alt="heaader badge"
               className="w-32 lg:w-44 h-10 lg:h-12 object-contain"
               priority
             />
@@ -111,7 +111,8 @@ const Testimonials = () => {
                     src={Images.Star}
                     width={15}
                     height={15}
-                    alt="star"
+                    alt={`star-${i + 1}`}
+                    loading="lazy"
                   />
                 ))}
               </div>
@@ -125,9 +126,10 @@ const Testimonials = () => {
               <div className="flex items-center gap-2 sm:gap-3">
                 <Image
                   src={testimonial.author.avatar}
-                  alt={testimonial.author.name}
+                  alt={`testimonial representing ${testimonial.author.name}`}
                   width={40}
                   height={40}
+                  loading="lazy"
                   className="rounded-full object-cover"
                 />
                 <div>
@@ -140,7 +142,8 @@ const Testimonials = () => {
                         src={Images.VerifiedTick}
                         width={15}
                         height={15}
-                        alt="verified"
+                        alt={`verified ${Images.VerifiedTick}`}
+                        loading="lazy"
                       />
                     )}
                   </div>
@@ -157,7 +160,6 @@ const Testimonials = () => {
         <BookServiceButton />
       </div>
     </section>
-
   );
 };
 

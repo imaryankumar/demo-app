@@ -36,7 +36,7 @@ const HeroSection = () => {
 
         {/* CTA Button */}
         <div className="mb-10">
-          <BookServiceButton/>
+          <BookServiceButton />
         </div>
 
         {/* Single Image */}
@@ -47,6 +47,7 @@ const HeroSection = () => {
               src={Images.bannerImage}
               alt="Right Hands App Screens"
               fill
+              sizes="100vw"
               className="object-cover lg:object-contain object-center"
               priority
             />

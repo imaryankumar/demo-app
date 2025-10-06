@@ -112,7 +112,8 @@ const WhyChooseUs = () => {
                     src={feature.icon}
                     width={20}
                     height={20}
-                    alt="icons"
+                    alt={`icon representing ${feature.title}`}
+                    loading="lazy"
                   />
                 </div>
 
@@ -131,14 +132,12 @@ const WhyChooseUs = () => {
                     {feature.description}
                   </p>
                 </div>
-
               </div>
             );
           })}
         </div>
       </div>
     </section>
-
   );
 };
 

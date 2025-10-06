@@ -10,7 +10,12 @@ import {
   DropdownMenuTrigger,
   DropdownMenuContent,
 } from "@/components/ui/dropdown-menu";
-import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { Images } from "@/assets";
 import { blogs, services, navItems } from "@/assets/constant";
 
@@ -27,7 +32,7 @@ const Header = () => {
           <Link href="#" className="flex items-center gap-2 shrink-0">
             <Image
               src={Images.logo}
-              alt="Right Hands Logo"
+              alt="Right Hands Logos"
               width={120}
               height={36}
               className="w-auto h-8 sm:h-9 lg:h-10"
@@ -45,11 +50,15 @@ const Header = () => {
                   onMouseEnter={() => setServicesOpen(true)}
                   onMouseLeave={() => setServicesOpen(false)}
                 >
-                  <button className="transition hover:text-primary flex items-center gap-1">
+                  <button
+                    aria-label="item-name"
+                    className="transition hover:text-primary flex items-center gap-1"
+                  >
                     {item.name}
                     <span
-                      className={`inline-block transform transition-transform duration-300 ${servicesOpen ? "rotate-180" : "rotate-0"
-                        }`}
+                      className={`inline-block transform transition-transform duration-300 ${
+                        servicesOpen ? "rotate-180" : "rotate-0"
+                      }`}
                     >
                       <ChevronDown size={16} className="sm:size-5" />
                     </span>
@@ -102,10 +111,11 @@ const Header = () => {
                               >
                                 <Image
                                   src={blog.image}
-                                  alt={blog.title}
+                                  alt={`blog titles - ${blog.title}`}
                                   width={100}
                                   height={100}
                                   className="rounded-md object-cover w-24 h-20 sm:w-32 sm:h-24"
+                                  loading="lazy"
                                 />
                                 <div className="flex-1">
                                   <p className="text-sm font-semibold text-gray-900 mb-1 line-clamp-2">
@@ -141,6 +151,7 @@ const Header = () => {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button
+                aria-label="menu"
                 variant="outline"
                 className="flex items-center gap-2 text-xs sm:text-sm cursor-pointer hover:bg-white "
               >
@@ -153,6 +164,7 @@ const Header = () => {
                   width={20}
                   height={20}
                   className="rounded-sm"
+                  loading="lazy"
                 />
               </Button>
             </DropdownMenuTrigger>
@@ -170,6 +182,7 @@ const Header = () => {
                           width={24}
                           height={24}
                           className="rounded-sm"
+                          loading="lazy"
                         />
                         <span className="text-sm">Qatar</span>
                       </div>
@@ -187,6 +200,7 @@ const Header = () => {
                           width={24}
                           height={24}
                           className="rounded-sm"
+                          loading="lazy"
                         />
                         <span className="text-sm">United Arab Emirates</span>
                       </div>
@@ -227,12 +241,13 @@ const Header = () => {
           <span className="hidden lg:inline-block h-8 border-r border-gray-300"></span>
           <Button
             variant="outline"
+            aria-label="Login"
             className="text-lg sm:text-sm hover:bg-white cursor-pointer border-gray-300"
           >
             Log in
           </Button>
           <Button
-         
+            aria-label="signup"
             className="bg-primary text-white text-xs sm:text-sm"
           >
             Sign up
@@ -243,6 +258,7 @@ const Header = () => {
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
             <Button
+              aria-label="menu"
               variant="ghost"
               size="icon"
               className="md:hidden hover:bg-gray-100"
@@ -252,17 +268,15 @@ const Header = () => {
           </SheetTrigger>
           <SheetContent side="left" className="p-6 w-72 sm:w-80">
             {/* Accessibility fix */}
-            <SheetTitle className="text-lg font-semibold mb-4">
-            </SheetTitle>
+            <SheetTitle className="text-lg font-semibold mb-4"></SheetTitle>
             <nav className="flex flex-col gap-4 text-sm sm:text-base">
               {navItems.map((item) =>
                 item.hasDropdown ? (
                   <div key={item.name}>
                     <button
+                      aria-label="nav-item"
                       className="flex items-center justify-between w-full font-medium"
-                      onClick={() =>
-                        setMobileServicesOpen(!mobileServicesOpen)
-                      }
+                      onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
                     >
                       {item.name}
                       <span>
@@ -301,8 +315,13 @@ const Header = () => {
               )}
             </nav>
             <div className="mt-6 flex flex-col gap-3">
-              <Button variant="outline">Log in</Button>
-              <Button className="bg-primary text-white hover:bg-primary/90">
+              <Button aria-label="mobile-login" variant="outline">
+                Log in
+              </Button>
+              <Button
+                aria-label="mobile-signup"
+                className="bg-primary text-white hover:bg-primary/90"
+              >
                 Sign up
               </Button>
             </div>

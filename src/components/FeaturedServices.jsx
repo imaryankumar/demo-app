@@ -56,8 +56,9 @@ const FeaturedServices = () => {
               <div className="relative h-64 md:h-72 overflow-hidden">
                 <Image
                   src={service.image}
-                  alt={service.title}
+                  alt={`service representing ${service.title}`}
                   fill
+                  loading="lazy"
                   className="object-cover rounded-2xl"
                 />
               </div>
